@@ -15,7 +15,7 @@ The json data must be an object with translation keys
 
 ### Example JSON
 
-```json
+```jsonc
 // en.json
 {
     "HELLOWORLD": "Hello world!",
