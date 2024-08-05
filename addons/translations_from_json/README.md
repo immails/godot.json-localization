@@ -2,8 +2,6 @@
 
 A Godot plugin for importing JSON files for translations.
 
-This is the Godot 4.x version of the plugin. If you want to use it on 3.x, head over to the [3.x branch](https://github.com/AliYil/TranslationsFromJson/tree/3.x).
-
 ## Usage
 
 1. [Install the plugin into your project](https://docs.godotengine.org/en/4.0/tutorials/plugins/editor/installing_plugins.html) and activate it.
@@ -13,19 +11,14 @@ This is the Godot 4.x version of the plugin. If you want to use it on 3.x, head 
 
 ## JSON Format
 
-The json data in file must be an object with locale and messages keys.
-
-- "locale" field signify which locale the texts are in.
-- "message" field must be an object that contains keys and corresponding text as string value.
+The json data must be an object with translation keys
 
 ### Example JSON
 
 ```json
+// en.json
 {
-    "locale": "en",
-    "messages": {
-        "HELLOWORLD": "Hello world!",
-        "ANOTHERTEXT": "This is another text."
-    }
+    "HELLOWORLD": "Hello world!",
+    "ANOTHERTEXT": "This is another text."
 }
 ```

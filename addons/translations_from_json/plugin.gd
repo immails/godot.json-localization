@@ -1,15 +1,13 @@
 @tool
 extends EditorPlugin
 
-var import_plugin
+var import_plugin: EditorImportPlugin;
 
 func _enter_tree():
 	import_plugin = preload("import_plugin.gd").new()
 	add_import_plugin(import_plugin)
-	pass
 
 
 func _exit_tree():
 	remove_import_plugin(import_plugin)
 	import_plugin = null
-	pass
