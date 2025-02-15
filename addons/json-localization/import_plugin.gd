@@ -7,11 +7,11 @@ func _get_visible_name():
 	return "JSON Translation"
 
 func _get_recognized_extensions():
-	return ["json"]
-	
+	return ["tjson"]
+
 func _get_save_extension():
 	return "translation"
-	
+
 func _get_resource_type():
 	return "Translation"
 
@@ -20,24 +20,24 @@ func _get_preset_count():
 
 func _get_preset_name(preset):
 	return "Default"
-			
+
 func _get_import_options(path, preset_index):
 	return []
-			
+
 func _get_import_order():
 	return 0
-			
+
 func _get_priority():
 	return 1
 
 func _import(source_file: String, save_path: String, options: Dictionary, platform_variants: Array[String], gen_files: Array[String]):
 	var translation := Translation.new();
-	translation.locale = source_file.get_file().replace(".json", "");
+	translation.locale = source_file.get_file().replace(".tjson", "");
 
 	var json := getJSON(source_file);
 	for key in json.keys():
 		translation.add_message(key, json[key]);
-	
+
 	return ResourceSaver.save(translation, "%s.%s" % [save_path, _get_save_extension()]);
 
 func getJSON(path: String) -> Dictionary:
